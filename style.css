@@ -1,44 +1,186 @@
-body{
-    margin:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
-    background-color: lightblue;
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height:100vh;
-    font-family:Arial,  sans-serif;
 }
-.container{
-    background-color: white;
-    padding:8px;
-    border-radius:15px;
-    box-shadow:0px,4px,20px,rgba(0,0,0,0.2);
-    text-align: center;
-}
-h1{
-    color:#333;
-}
-input{
-    padding:10px;
-    width:220px;
-    border:2px solid #ccc;
-    border-radius:8px;
-    outline:none;
 
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('download.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.75;       /* change this: 0.1 = very faded, 1.0 = full photo */
+    z-index: 0;
 }
-button{
-    padding:10px 15px;
-    border:none;
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 80px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.bg-art {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.container{
+    position: relative;
+    z-index: 1;
+    width: 42%;
+    min-height: 85vh;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ff4d6d;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.counter {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px 14px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1.5px solid #eee;
+    font-size: 0.95rem;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    transition: border 0.2s;
+    background: rgba(255,255,255,0.9);
+}
+
+input:focus {
+    border-color: #ff4d6d;
+}
+
+button#addBtn {
+    padding: 11px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button#addBtn:hover {
+    background-color: #4b44db;
+    transform: scale(1.04);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+.empty-msg {
+    color: #bbb;
+    font-size: 0.9rem;
+    padding: 10px;
+    text-align: center;
+}
+
+li {
+    background: rgba(255, 229, 236, 0.85);
+    padding: 10px 14px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    animation: slideIn 0.25s ease;
+    border: 1px solid rgba(255, 180, 195, 0.4);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.task-info {
+    flex: 1;
+    cursor: pointer;
+}
+
+.task-text {
+    font-weight: 700;
+    color: #333;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.task-meta {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 2px;
+}
+
+li.done .task-text {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+.del-btn {
+    padding: 5px 10px;
+    border: none;
     border-radius: 8px;
-    background-color:#6c63ff;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
-    
+    background-color: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+    flex-shrink: 0;
 }
-button:hover{
-    background-color:#4b44db;
-    transform:scale(1.05);
+
+.del-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.06);
 }

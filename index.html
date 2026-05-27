@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
     <title>TO DO LIST</title>
-    </head>
-    </html>
-    <body>
-        <h1>TO DO LIST</h1>
-        <input type = "text" placeholder=" Enter your task for today">
-        <button>Add</button>
-        <ul>
-            <li>Task 1</li>
-            <button>Delete</button>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>To Do List</h1>
+        <p class="counter" id="counter">No tasks yet!</p>
+
+        <div class="input-group">
+            <input type="text" id="task" placeholder="Enter your task...">
+            <input type="date" id="date">
+            <input type="time" id="time">
+            <button id="addBtn">Add Task</button>
+        </div>
+
+        <ul id="taskList">
+            <li class="empty-msg">You are all caught up!</li>
         </ul>
-    </body>    
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>

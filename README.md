@@ -1,13 +1,20 @@
-# To-Do List
+# To-Do List App
 
-This is my first project using HTML, CSS and JavaScript.
+My first web development project using HTML, CSS and JavaScript.
 
 ## Features
 - Add tasks
 - Delete tasks
 - Simple UI
+- Responsive design
 
 ## Technologies Used
 - HTML
 - CSS
 - JavaScript
+
+## Live Demo
+https://shraddhaasharma1507-ctrl.github.io/To--Do-list/
+
+## Author
+Ankita Sharma

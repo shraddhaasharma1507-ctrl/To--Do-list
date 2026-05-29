@@ -1,3 +1,4 @@
+// Developed by Ankita Sharma
 const addBtn = document.querySelector("#addBtn");
 const ul = document.querySelector("#taskList");
 const taskInput = document.querySelector("#task");
